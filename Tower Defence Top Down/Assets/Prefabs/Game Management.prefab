@@ -1,0 +1,235 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7977229379768914072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7977229379768914074}
+  - component: {fileID: 7977229379768914075}
+  - component: {fileID: 2090963447}
+  m_Layer: 0
+  m_Name: Game Management
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7977229379768914074
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7977229379768914072}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7977229379768914075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7977229379768914072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea9a1b0e7015e477ab656be7619a37d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players:
+  - playerName: Falcon 1
+    playerPrefab: {fileID: 154924792628025203, guid: bda120e4e3b024df99a0aff87e39ead2,
+      type: 3}
+    number: 0
+    playerType: Basic
+    speed: Normal
+    projectile: Basic
+    playerTemplateImage: {fileID: 21300000, guid: 5eea2d582eff04289b5a96c3122e832b,
+      type: 3}
+    unlockCost: 0
+    isUnlocked: 1
+    isSelected: 0
+  - playerName: Little Fist
+    playerPrefab: {fileID: 154924792628025203, guid: 65129de7893564daab48554aeda77048,
+      type: 3}
+    number: 1
+    playerType: Heavy
+    speed: Slow
+    projectile: Big
+    playerTemplateImage: {fileID: 21300000, guid: 30142dee871e1452e9492d9c4065ebde,
+      type: 3}
+    unlockCost: 500
+    isUnlocked: 0
+    isSelected: 0
+  - playerName: Jet Stream
+    playerPrefab: {fileID: 154924792628025203, guid: 05efd426eefdb4c76af1284b3a216b45,
+      type: 3}
+    number: 2
+    playerType: Speedster
+    speed: Fast
+    projectile: Small
+    playerTemplateImage: {fileID: 21300000, guid: d33ca636a6feb4ed1a21431d3d9f3a05,
+      type: 3}
+    unlockCost: 500
+    isUnlocked: 0
+    isSelected: 0
+  - playerName: Falcon 2
+    playerPrefab: {fileID: 154924792628025203, guid: 2131895c67bfd44839ddfd5e8e50e571,
+      type: 3}
+    number: 3
+    playerType: Basic
+    speed: Normal
+    projectile: Basic
+    playerTemplateImage: {fileID: 21300000, guid: a907d64baacaf47d9abf88f222cf18c4,
+      type: 3}
+    unlockCost: 1000
+    isUnlocked: 0
+    isSelected: 0
+  - playerName: Rock
+    playerPrefab: {fileID: 154924792628025203, guid: 4f3645f387ae44870ac797790bba9128,
+      type: 3}
+    number: 4
+    playerType: Tank
+    speed: Slow
+    projectile: Big
+    playerTemplateImage: {fileID: 21300000, guid: 5ce75aeeceb4e4eb48fbffa639e4d4fe,
+      type: 3}
+    unlockCost: 1000
+    isUnlocked: 0
+    isSelected: 0
+  - playerName: Wormhole
+    playerPrefab: {fileID: 154924792628025203, guid: c7c4e724485ba4947be8b8b5efc5fd42,
+      type: 3}
+    number: 5
+    playerType: Speedster
+    speed: Normal
+    projectile: Basic
+    playerTemplateImage: {fileID: 21300000, guid: 214e6929ba20342aaa17b26d68620714,
+      type: 3}
+    unlockCost: 1000
+    isUnlocked: 0
+    isSelected: 0
+  - playerName: Falcon 3
+    playerPrefab: {fileID: 154924792628025203, guid: 3f556e72a421342ddb9a264de1016fdc,
+      type: 3}
+    number: 6
+    playerType: Basic
+    speed: Normal
+    projectile: Basic
+    playerTemplateImage: {fileID: 21300000, guid: ae00749dc9df343db9f108d0bc359520,
+      type: 3}
+    unlockCost: 1500
+    isUnlocked: 0
+    isSelected: 0
+  - playerName: Exterminator
+    playerPrefab: {fileID: 154924792628025203, guid: 379aafa7fae984541ab00b4fe2dc008f,
+      type: 3}
+    number: 7
+    playerType: Tank
+    speed: Slow
+    projectile: Big
+    playerTemplateImage: {fileID: 21300000, guid: 9772e2e838c4c4d61bd5d5cb97e1acd8,
+      type: 3}
+    unlockCost: 2000
+    isUnlocked: 0
+    isSelected: 0
+  - playerName: Lightspeed
+    playerPrefab: {fileID: 154924792628025203, guid: 44d2b8344f3ce4dd8988d6ae460d4683,
+      type: 3}
+    number: 8
+    playerType: Speedster
+    speed: Fast
+    projectile: Small
+    playerTemplateImage: {fileID: 21300000, guid: c9facd12edd7c4ceea71c3ff63963fa0,
+      type: 3}
+    unlockCost: 2000
+    isUnlocked: 0
+    isSelected: 0
+  bases: []
+  playerCoinTotal: 0
+  playerSelected: 0
+  selectedPlayerPrefab: {fileID: 0}
+  pointsToNextLevel: []
+  totalPoints: 0
+  baseExp: 1000
+  currentPlayerLevel: 1
+  maxLevel: 5
+  highScore: 0
+--- !u!114 &2090963447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7977229379768914072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a08a73888d406407f847fa6fb45b7603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Small Menu Click
+    clip: {fileID: 8300000, guid: 2d57d15194c1db14e916303b87f58121, type: 3}
+    volume: 1
+    pitch: 1.5
+    source: {fileID: 0}
+    loop: 0
+  - name: Laser_Basic
+    clip: {fileID: 8300000, guid: 2d89e425480df4644a18f632e38cc69d, type: 3}
+    volume: 1
+    pitch: 1.5
+    source: {fileID: 0}
+    loop: 0
+  - name: Laser_Medium
+    clip: {fileID: 8300000, guid: ae7c6d5467ce1b743b46e51b67b68195, type: 3}
+    volume: 1
+    pitch: 1.5
+    source: {fileID: 0}
+    loop: 0
+  - name: Laser_Heavy
+    clip: {fileID: 8300000, guid: 5daeefbc8ce8c694ab07bf3f9847f76f, type: 3}
+    volume: 1
+    pitch: 1.5
+    source: {fileID: 0}
+    loop: 0
+  - name: Base_Hum
+    clip: {fileID: 8300000, guid: 8bf90c60e8f68764eb0e8cacf4221978, type: 3}
+    volume: 0.7
+    pitch: 1.5
+    source: {fileID: 0}
+    loop: 1
+  - name: Death Explosion 1
+    clip: {fileID: 8300000, guid: 0b9e3f6d85d6c874d95481097159a003, type: 3}
+    volume: 1
+    pitch: 1.5
+    source: {fileID: 0}
+    loop: 0
+  - name: Death Explosion 2
+    clip: {fileID: 8300000, guid: 96d90f1636e24074c94e815375f55eef, type: 3}
+    volume: 1
+    pitch: 1.5
+    source: {fileID: 0}
+    loop: 0
+  - name: Bullet Impact
+    clip: {fileID: 8300000, guid: 522752d919c0a1049991bcfb2d2a36f0, type: 3}
+    volume: 1
+    pitch: 1.5
+    source: {fileID: 0}
+    loop: 0
+  - name: Pick Up
+    clip: {fileID: 8300000, guid: 4c588096dff650d49998cb3535a79b7e, type: 3}
+    volume: 1
+    pitch: 1.5
+    source: {fileID: 0}
+    loop: 0
+  music: []
+  musicVolume: 1
+  SFXVolume: 1

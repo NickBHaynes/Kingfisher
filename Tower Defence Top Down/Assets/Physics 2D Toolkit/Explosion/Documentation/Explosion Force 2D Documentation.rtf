@@ -1,0 +1,825 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf400
+{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fmodern\fcharset0 Courier;
+}
+{\colortbl;\red255\green255\blue255;\red0\green77\blue187;\red255\green0\blue0;\red167\green255\blue96;
+}
+{\*\expandedcolortbl;;\csgenericrgb\c0\c30196\c73333;\csgenericrgb\c100000\c0\c0;\csgenericrgb\c65490\c100000\c37647;
+}
+\paperw11900\paperh16840\vieww12000\viewh15840\viewkind0
+\deftab720
+\pard\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+
+\f0\b\fs22 \cf0 Support Mail : 
+\f1\b0 support@pulsarxstudio.com\
+
+\f0\b Contact Mail : 
+\f1\b0 contact@pulsarxstudio.com
+\f0\b \
+Online Documentation 
+\f1\b0 : {\field{\*\fldinst{HYPERLINK "https://pulsarxstudio.com/Explosion%20Force%202D"}}{\fldrslt https://pulsarxstudio.com/Explosion%20Force%202D}}\
+
+\f0\b Youtube 
+\f1\b0 : {\field{\*\fldinst{HYPERLINK "https://www.youtube.com/channel/UCKStVeii9L2WdToHB56R8mg"}}{\fldrslt https://www.youtube.com/channel/UCKStVeii9L2WdToHB56R8mg}}\
+
+\f0\b Discord 
+\f1\b0 : {\field{\*\fldinst{HYPERLINK "https://discord.gg/MPd4vNj"}}{\fldrslt https://discord.gg /MPd4vNj}}
+\f0\b\fs40 \
+\pard\pardeftab720\qc\partightenfactor0
+
+\fs22 \cf0 \
+\pard\pardeftab720\sl276\slmult1\sa200\qc\partightenfactor0
+
+\fs36 \cf2 How To Use\
+\pard\pardeftab720\qc\partightenfactor0
+
+\fs22 \cf0 Step 1:
+\f1\b0 \
+Create some objects that will be affected by the explosion. Those objects should have:\
+-Rigidbody2D (Dynamic)\
+-Collider2D\
+-and SpriteRenderer\
+\
+\
+\
+\
+
+\f0\b Step 2:\
+\pard\pardeftab720\qc\partightenfactor0
+
+\f1\b0 \cf0 Make a simple BoxCollider2D at the bottom of the screen so that objects don\'92t fall down.\
+\uc0\u8232 \
+\
+\
+\pard\pardeftab720\qc\partightenfactor0
+
+\f0\b \cf0 Step 3:
+\f1\b0 \
+Create an empty Gameobject, and add the explosion component to that object.\
+For example: Add Component/Physics 2D Toolkit/ Single Explosion\
+\pard\tx8640\pardeftab720\qc\partightenfactor0
+\cf0 \
+\
+\
+\pard\pardeftab720\qc\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf0 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf0 \
+\pard\pardeftab720\qc\partightenfactor0
+
+\f0\b \cf0 Step 4:\
+\pard\pardeftab720\qc\partightenfactor0
+
+\f1\b0 \cf0 Check the toolbox On Click. That means the explosion will be activated by the left mouse click.\
+You can also make reference to a SingleExplosion script form another script\
+ and call a method named: 
+\f0\b Activate();\
+
+\f1\b0 \
+\
+\
+\pard\pardeftab720\qc\partightenfactor0
+
+\f0\b \cf0 Step 5:\
+\pard\pardeftab720\qc\partightenfactor0
+
+\f1\b0 \cf0 Finally, start the game and press the left mouse click.\
+\pard\pardeftab720\qc\partightenfactor0
+
+\f0\b \cf0 This is it. Enjoy! :)\
+\pard\pardeftab720\qc\partightenfactor0
+
+\f1\b0 \cf0   \
+\pard\pardeftab720\sa200\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa200\qc\partightenfactor0
+
+\f0\b\fs36 \cf2 Explosions\cf0 \
+
+\fs28 Single Explosion\
+
+\fs22 Add Component/Physics 2D Toolkit/Single Explosion\
+\pard\pardeftab720\sa200\partightenfactor0
+
+\f1\b0 \cf0 This is a simple explosion that applies force to a rigidbody that simulates explosion effect.\
+\pard\pardeftab720\sa200\partightenfactor0
+
+\f0\b \cf0 \
+\pard\pardeftab720\sa200\qc\partightenfactor0
+
+\fs28 \cf0 Uplift Explosion\
+
+\fs22 Add Component/Physics 2D Toolkit/Uplift Explosion
+\fs28 \
+\pard\pardeftab720\sa200\partightenfactor0
+
+\f1\b0\fs22 \cf0 This is the same as simple explosion, but it contains one additional feature - 'Uplift Modifier'. Using this parameter, you can easily make the explosion appear to throw objects up, which often gives a more dramatic effect than a simple outward force.\
+\
+\pard\pardeftab720\sa200\qc\partightenfactor0
+
+\f0\b\fs28 \cf0 Double Explosion\
+
+\fs22 Add Component/Physics 2D Toolkit/Double Explosion
+\fs28 \
+\pard\pardeftab720\sa200\partightenfactor0
+
+\f1\b0\fs22 \cf0 These are the two simple explosions. The first explosion is activated instantly, and the second explosion can be activated with delay by modifying the '
+\f0\b Second Explosion Delay
+\f1\b0 ' parameter.
+\f0\b\fs28 \
+\pard\pardeftab720\sa200\qc\partightenfactor0
+\cf0 \
+Triple Explosion\
+
+\fs22 Add Component/Physics 2D Toolkit/Triple Explosion
+\fs28 \
+\pard\pardeftab720\sa200\partightenfactor0
+
+\f1\b0\fs22 \cf0 These are the three simple explosions. The first explosion is activated instantly, then the second explosion can be activated with delay by modifying the '
+\f0\b Second Explosion Delay
+\f1\b0 ' parameter, and the third explosion is delayed with the '
+\f0\b Third Explosion Delay
+\f1\b0 ' parameter. NOTE! The '
+\f0\b Third Explosion Delay
+\f1\b0 ' parameter starts counting when the first explosion is activated (not the second)! - which means that the third explosion can be activated before the second!
+\f0\b\fs28 \
+\pard\pardeftab720\sa200\qc\partightenfactor0
+\cf0 \
+Attractive Explosion\
+
+\fs22 Add Component/Physics 2D Toolkit/Attractive Explosion\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0 \cf0 In order to achieve the effect of attractiveness, this is the best solution for you.
+\f0\b\fs28 \
+
+\f1\b0\fs22 This explosion has two states: \
+1. Attraction: when activated, it will constantly attract rigidbodies towards the center of attraction. This attraction is used inside 
+\f0\b FixedUpdate().
+\f1\b0 \
+2. Explosion: when the '
+\f0\b Explosion Delay
+\f1\b0 ' timer runs out, the attraction will stop, and the explosion will occur.
+\f0\b\fs28 \
+\pard\pardeftab720\sa200\qc\partightenfactor0
+\cf0 \
+Unstable Explosion\
+
+\fs22 Add Component/Physics 2D Toolkit/Unstable Explosion
+\fs28 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0\fs22 \cf0 This explosion has two states: \
+1. Shaking: when activated, based on the frequency settings, this will shake rigidbodies randomly.\
+2. Explosion: when the '
+\f0\b Explosion Delay
+\f1\b0 ' timer runs out, the shaking will stop, and the explosion will occur.
+\f0\b\fs28 \
+\pard\pardeftab720\sa200\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa200\qc\partightenfactor0
+\cf0 Pulsing Explosion\
+
+\fs22 Add Component/Physics 2D Toolkit/Pulsing Explosion
+\fs28 \
+\pard\pardeftab720\sa200\partightenfactor0
+
+\f1\b0\fs22 \cf0 This is a simple explosion that applies force to a rigidbody that simulates explosion effect. It can be useful for objects that constantly fall into the specific area, and need to be pushed away.\
+\
+\pard\pardeftab720\sa200\qc\partightenfactor0
+
+\f0\b\fs36 \cf2 Settings\
+\pard\pardeftab720\sa200\qc\partightenfactor0
+
+\fs32 \cf0 Filter Settings
+\fs36 \cf2 \
+\pard\pardeftab720\sa200\partightenfactor0
+
+\fs22 \cf0 Layer Filter : 
+\f1\b0 Chose layers that will be affected by the explosion.\
+
+\f0\b Tag Filter : 
+\f1\b0 Chose tags that will be affected by the explosion.\
+
+\f0\b Min Depth : 
+\f1\b0 Only include objects with a 
+\f0\b Z 
+\f1\b0 coordinate (depth), greater then or equal to this value.\
+
+\f0\b Max Depth : 
+\f1\b0  Only include objects with a 
+\f0\b Z 
+\f1\b0 coordinate (depth), less then or equal to this value.\
+
+\f0\b Use Gameobject Depth : 
+\f1\b0 Only include objects with a 
+\f0\b Z 
+\f1\b0 coordinate(depth) that are equal to this object 
+\f0\b Z 
+\f1\b0 coordinate(depth).\
+
+\f0\b Use Trigger Colliders: 
+\f1\b0 Use trigger type of Collider2D.\
+
+\f0\b Use Solid Colliders: 
+\f1\b0 Use solid type of Collider2D.\
+\pard\pardeftab720\sa200\qc\partightenfactor0
+
+\f0\b\fs32 \cf0 Finish Actions
+\fs36 \cf2 \
+\pard\pardeftab720\sa200\partightenfactor0
+
+\fs22 \cf0 Destroy Script : 
+\f1\b0 When the explosion is finished. Should this script automaticaly destroy itself?\
+
+\f0\b Destroy Gameobject : 
+\f1\b0 When the explosion is finished. Should this Gameobject automaticaly destroy itself?\
+
+\f0\b Deactivate Gameobject : 
+\f1\b0 When the explosion is finished. Should this Gameobject automaticaly deactivate itself?\
+\pard\pardeftab720\sa200\qc\partightenfactor0
+
+\f0\b\fs32 \cf0 Activate
+\fs36 \cf2 \
+\pard\pardeftab720\sa200\partightenfactor0
+
+\fs22 \cf0 On Click : 
+\f1\b0 Activate the explosion by the left mouse click ? This is useful for testing. But note that this works only in Editor!\
+
+\f0\b On Enable : 
+\f1\b0 Activate the explosion when this Gameobject becomes enabled?\
+
+\f0\b On Disable : 
+\f1\b0  Activate the explosion when this Gameobject becomes disabled?\
+\pard\pardeftab720\sa200\qc\partightenfactor0
+
+\f0\b\fs32 \cf0 Explosion Settings
+\fs36 \cf2 \
+\pard\pardeftab720\sa200\partightenfactor0
+
+\fs22 \cf0 Explosion Radius : 
+\f1\b0 Radius of the circle within witch the explosion has its effect.\
+
+\f0\b Explosion Offset : 
+\f1\b0 The offset of the explosion position (World Space).\
+ 
+\f0\b Explosion Force : 
+\f1\b0 The force of the explosion.\
+
+\f0\b Modifie Force By Distance : 
+\f1\b0  if set to 
+\f0\b true, 
+\f1\b0 Force will be modified by distance, but Note that bodies with the center of mass outside the radius will not be affected by the explosion.\
+
+\f0\b ForceMode2D : 
+\f1\b0  Use this to apply a certain type of force to a 2D RigidBody. There are two types of forces to apply: Force mode and Impulse Mode.\
+\
+\pard\pardeftab720\sa200\qc\partightenfactor0
+
+\f0\b\fs36 \cf2 Methods\cf0 \
+\pard\pardeftab720\sl360\slmult1\sa200\qc\partightenfactor0
+
+\fs32 \cf0 namespace: using ExplosionForce2D;
+\fs28 \
+\pard\pardeftab720\sa200\qc\partightenfactor0
+\cf0 Rigidbody2D.AddExplosionForce2D\
+\pard\pardeftab720\sa200\partightenfactor0
+
+\f1\b0\fs22 \cf0 Public static void 
+\f0\b AddExplosionForce2D
+\f1\b0  (float 
+\f0\b force
+\f1\b0 , vector3 
+\f0\b explosionPosition
+\f1\b0 , float 
+\f0\b  radius
+\f1\b0 , bool 
+\f0\b modifyForceByDistance = true
+\f1\b0 , bool 
+\f0\b lookAtMovingDirection = false
+\f1\b0 , float 
+\f0\b lookAtAngleModifier
+\f1\b0  = 0f, 
+\f0\b ForceMode2D
+\f1\b0  = ForceMode2D.Force )\
+Public static void 
+\f0\b AddExplosionForce2D
+\f1\b0  (float 
+\f0\b force
+\f1\b0 , vector3 
+\f0\b explosionPosition
+\f1\b0 , float 
+\f0\b  radius
+\f1\b0 , bool 
+\f0\b modifyForceByDistance = true
+\f1\b0 , 
+\f0\b ForceMode2D
+\f1\b0  = ForceMode2D.Force )\
+Public static void 
+\f0\b AddExplosionForce2D
+\f1\b0  (float 
+\f0\b force
+\f1\b0 , vector3 
+\f0\b explosionPosition
+\f1\b0 , 
+\f0\b ForceMode2D
+\f1\b0  = ForceMode2D.Force )\
+\pard\pardeftab720\sa200\partightenfactor0
+
+\f0\b\fs28 \cf0 Parameters
+\f1\b0 \
+\pard\pardeftab720\li270\sa200\partightenfactor0
+
+\f0\b\fs22 \cf0 force  			
+\f1\b0 The force of the explosion.\
+
+\f0\b explosionPosition 		
+\f1\b0 The center of the circle witch the explosion has it's effect.\
+\pard\pardeftab720\li270\sl276\slmult1\sa200\partightenfactor0
+
+\f0\b \cf0 radius  			
+\f1\b0 Radius of the circle within witch the explosion has it's effect.\
+
+\f0\b modifyForceByDistance  	
+\f1\b0 Force will be modified by distance.\
+
+\f0\b lookAtMovingDirection	
+\f1\b0 Instantly rotate Rigidbody2D towards it's moving direction.\
+
+\f0\b lookAtAngleModifier
+\f1\b0  
+\f0\b              
+\f1\b0 Modifies the angle of rotation\
+
+\f0\b ForceMode2D
+\f1\b0  
+\f0\b 	 
+\f1\b0  	The method used to apply the force to it's target.\
+\pard\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+
+\f0\b\fs28 \cf0 Description\
+\pard\pardeftab720\li270\sa200\partightenfactor0
+
+\f1\b0\fs22 \cf0 Applied a force to a Rigidbody2D that simulates explosion effects.\
+The explosion is modelled as a circle with a certian center position and radius in world space.\
+
+\f0\b modifyForceByDistance 
+\f1\b0 if set to 
+\f0\b true, 
+\f1\b0 Force will be modified by distance, but Note that bodies with the center of mass outside the radius will not be affected by the explosion.\
+
+\f0\b lookAtMovingDirection 
+\f1\b0 if set to 
+\f0\b true,
+\f1\b0  Rigidbody2D will be instantly rotated towards it's 
+\f0\b moving direction, 
+\f1\b0 not force direction! This is useful when using every frame. It is recommended to apply this feature to round objects.\
+
+\f0\b lookAtAngleModifier
+\f1\b0  Modify the angle of rotation based on your initial sprites rotation.\
+Force can be applied only to an active Rigidbody2D. If a GameObject is inactive, AddExplosionForce2D has no effect.
+\f2\fs18 \
+\pard\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+
+\f0\b\fs28 \cf0 Example\
+\pard\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+
+\fs22 \cf0 using
+\f1\b0  UnityEngine;\uc0\u8232 
+\f0\b using
+\f1\b0  ExplosionForce2D;\uc0\u8232 \u8232 public 
+\f0\b class
+\f1\b0  ExampleClass : MonoBehaviour \{\
+	public float force = 25f;\uc0\u8232 	public float radius = 4f;\u8232 	public bool modifyForceByDistance = true;\u8232 	public Vector3 offset = default(Vector3);\u8232 	public ForceMode2D forceMode = ForceMode2D.Impulse;\u8232 \u8232 	private Collider2D[] colliders = new Collider2D[]\{\};\u8232 \u8232 	void Explode () \{\u8232 		colliders = Physics2D.OverlapCircleAll (transform.position,radius);\u8232 		foreach (Collider2D hit in colliders) \{\u8232 			Rigidbody2D Rb = hit.GetComponent<Rigidbody2D> ();\u8232 			if (Rb)\u8232 				Rb.AddExplosionForce2D (force, transform.position + offset, radius, modifyForceByDistance, forceMode);\u8232 		\}\u8232 	\}\u8232 \u8232 	void Start () \{\u8232 		Explode ();\u8232 	\}\u8232 \}\
+\
+\
+\pard\pardeftab720\sa200\qc\partightenfactor0
+
+\f0\b\fs28 \cf0 Rigidbody2D.AddUpliftedExplosionForce2D\
+\pard\pardeftab720\sa200\partightenfactor0
+
+\f1\b0\fs22 \cf0 Public static void 
+\f0\b AddUpliftedExplosionForce2D
+\f1\b0  (float 
+\f0\b force
+\f1\b0 , vector3 
+\f0\b explosionPosition
+\f1\b0 , float 
+\f0\b  radius
+\f1\b0 , float 
+\f0\b upliftModifier
+\f1\b0 , bool 
+\f0\b modifyForceByDistance = true
+\f1\b0 , bool 
+\f0\b lookAtMovingDirection = false
+\f1\b0 , float 
+\f0\b lookAtAngleModifier
+\f1\b0  = 0f, 
+\f0\b ForceMode2D
+\f1\b0  = ForceMode2D.Force )\
+Public static void 
+\f0\b AddUpliftedExplosionForce2D
+\f1\b0  (float 
+\f0\b force
+\f1\b0 , vector3 
+\f0\b explosionPosition
+\f1\b0 , float 
+\f0\b  radius
+\f1\b0 , float 
+\f0\b upliftModifier
+\f1\b0 , bool 
+\f0\b modifyForceByDistance = true
+\f1\b0 , 
+\f0\b ForceMode2D
+\f1\b0  = ForceMode2D.Force )\
+\pard\pardeftab720\sa200\partightenfactor0
+
+\f0\b\fs28 \cf0 Parameters
+\f1\b0 \
+\pard\pardeftab720\li270\sa200\partightenfactor0
+
+\f0\b\fs22 \cf0 force  			
+\f1\b0 The force of the explosion.\
+
+\f0\b explosionPosition 		
+\f1\b0 The center of the circle witch the explosion has it's effect.\
+\pard\pardeftab720\li270\sl276\slmult1\sa200\partightenfactor0
+
+\f0\b \cf0 radius  			
+\f1\b0 Radius of the circle within witch the explosion has it's effect.\
+
+\f0\b upliftModifier		
+\f1\b0 Adjustment to the apparent position of the explosion.\
+
+\f0\b modifyForceByDistance  	
+\f1\b0 Force will be modified by distance.\
+
+\f0\b lookAtMovingDirection	
+\f1\b0 Instantly rotate Rigidbody2D towards it's moving direction.\
+
+\f0\b lookAtAngleModifier
+\f1\b0  
+\f0\b              
+\f1\b0 Modifies the angle of rotation\
+
+\f0\b ForceMode2D
+\f1\b0  
+\f0\b 	 
+\f1\b0  	The method used to apply the force to it's target.\
+\pard\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+
+\f0\b\fs28 \cf0 Description\
+\pard\pardeftab720\li270\sa200\partightenfactor0
+
+\f1\b0\fs22 \cf0 Applied a force to a Rigidbody2D that simulates explosion effects.\
+The explosion is modelled as a circle with a certian center position and radius in world space.\
+ 
+\f0\b upliftModifier 
+\f1\b0 : Using this parameter, you can easily make the explosion appear to throw objects up, which often gives a more dramatic effect than a simple outward force.\
+
+\f0\b modifyForceByDistance 
+\f1\b0 if set to 
+\f0\b true, 
+\f1\b0 Force will be modified by distance, but Note that bodies with the center of mass outside the radius will not be affected by the explosion.\
+
+\f0\b lookAtMovingDirection 
+\f1\b0 if set to 
+\f0\b true,
+\f1\b0  Rigidbody2D will be instantly rotated towards it's 
+\f0\b moving direction, 
+\f1\b0 not force direction! This is useful when using every frame. It is recommended to apply this feature to round objects.\
+
+\f0\b lookAtAngleModifier
+\f1\b0  Modify the angle of rotation based on your initial sprites rotation.\
+Force can be applied only to an active Rigidbody2D. If a GameObject is inactive, AddUpliftedExplosionForce2D has no effect.
+\f2\fs18 \
+\pard\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+
+\f0\b\fs28 \cf0 Example\
+\pard\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+
+\fs22 \cf0 using
+\f1\b0  UnityEngine;\uc0\u8232 
+\f0\b using
+\f1\b0  ExplosionForce2D;\uc0\u8232 \u8232 public 
+\f0\b class
+\f1\b0  ExampleClass : MonoBehaviour \{\uc0\u8232 	public float force = 25f;\u8232 	public float radius = 4f;\u8232 	public float upliftModifier = 1f;\u8232 	public bool modifyForceByDistance = true;\u8232 	public Vector3 offset = default(Vector3);\u8232 	public ForceMode2D forceMode = ForceMode2D.Impulse;\u8232 \u8232 	private Collider2D[] colliders = new Collider2D[]\{\};\u8232 \u8232 	void Explode () \{\u8232 		colliders = Physics2D.OverlapCircleAll (transform.position,radius);\u8232 		foreach (Collider2D hit in colliders) \{\u8232 			Rigidbody2D Rb = hit.GetComponent<Rigidbody2D> ();\u8232 			if (Rb)\u8232 				Rb.AddUpliftedExplosionForce2D (force, transform.position + offset, radius,upliftModifier, modifyForceByDistance, forceMode);\u8232 		\}\u8232 	\}\u8232 \u8232 	void Start () \{\u8232 		Explode ();\u8232 	\}\u8232 \}\u8232 
+\fs24 \
+\
+\pard\pardeftab720\sa200\qc\partightenfactor0
+
+\f0\b\fs28 \cf0 Rigidbody2D.AddAttractionForce2D\
+\pard\pardeftab720\sa200\partightenfactor0
+
+\f1\b0\fs22 \cf0 Public static void 
+\f0\b AddAttractionExplosionForce2D
+\f1\b0  (float 
+\f0\b force
+\f1\b0 , vector3 
+\f0\b attractionPosition
+\f1\b0 , float 
+\f0\b  radius
+\f1\b0 , bool 
+\f0\b modifyForceByDistance = true
+\f1\b0 , bool 
+\f0\b lookAtMovingDirection = false
+\f1\b0 , float 
+\f0\b lookAtAngleModifier
+\f1\b0  = 0f, 
+\f0\b ForceMode2D
+\f1\b0  = ForceMode2D.Force )\
+Public static void 
+\f0\b AddAttractionExplosionForce2D
+\f1\b0  (float 
+\f0\b force
+\f1\b0 , vector3 
+\f0\b attractionPosition
+\f1\b0 , float 
+\f0\b  radius
+\f1\b0 , bool 
+\f0\b modifyForceByDistance = true
+\f1\b0 , 
+\f0\b ForceMode2D
+\f1\b0  = ForceMode2D.Force )\
+Public static void 
+\f0\b AddAttractionExplosionForce2D
+\f1\b0  (float 
+\f0\b force
+\f1\b0 , vector3 
+\f0\b attractionPosition
+\f1\b0 , 
+\f0\b ForceMode2D
+\f1\b0  = ForceMode2D.Force )\
+\pard\pardeftab720\sa200\partightenfactor0
+
+\f0\b\fs28 \cf0 Parameters
+\f1\b0 \
+\pard\pardeftab720\li270\sa200\partightenfactor0
+
+\f0\b\fs22 \cf0 force  			
+\f1\b0 The force of the explosion.\
+
+\f0\b attractionPosition		
+\f1\b0 The center of the circle witch the attraction has it's effect.\
+\pard\pardeftab720\li270\sl276\slmult1\sa200\partightenfactor0
+
+\f0\b \cf0 radius  			
+\f1\b0 Radius of the circle within witch the attraction has it's effect.\
+
+\f0\b modifyForceByDistance  	
+\f1\b0 Force will be modified by distance.\
+
+\f0\b lookAtMovingDirection	
+\f1\b0 Instantly rotate Rigidbody2D towards it's moving direction.\
+
+\f0\b lookAtAngleModifier
+\f1\b0  
+\f0\b              
+\f1\b0 Modifies the angle of rotation\
+
+\f0\b ForceMode2D
+\f1\b0  
+\f0\b 	 
+\f1\b0  	The method used to apply the attraction force to it's target.\
+\pard\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+
+\f0\b\fs28 \cf0 Description\
+\pard\pardeftab720\li270\sa200\partightenfactor0
+
+\f1\b0\fs22 \cf0 Applied a attraction force to a Rigidbody2D that simulates explosion effects.\
+In order to achieve the effect of attractiveness, this is the best solution for you.\
+The attraction is modeled as a circle with a certain center position and radius in world space.\
+This Attraction Force should be used inside 
+\f0\b FixedUpdate(). 
+\f1\b0 \
+
+\f0\b modifyForceByDistance 
+\f1\b0 if set to 
+\f0\b true, 
+\f1\b0 Force will be modified by distance, but Note that bodies with the center of mass outside the radius will not be affected by the explosion.\
+
+\f0\b lookAtMovingDirection 
+\f1\b0 if set to 
+\f0\b true,
+\f1\b0  Rigidbody2D will be instantly rotated towards it's 
+\f0\b moving direction, 
+\f1\b0 not force direction! This is useful when using every frame. It is recommended to apply this feature to round objects.\
+
+\f0\b lookAtAngleModifier
+\f1\b0  Modify the angle of rotation based on your initial sprites rotation.\
+ Attraction force can be applied only to an active Rigidbody2D. If a GameObject is inactive, AddAttractionForce2D has no effect.
+\f2\fs18 \
+\pard\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+
+\f0\b\fs28 \cf0 Example\
+\pard\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+
+\fs22 \cf0 using
+\f1\b0  UnityEngine;\uc0\u8232 
+\f0\b using
+\f1\b0  ExplosionForce2D;\uc0\u8232 \u8232 public 
+\f0\b class
+\f1\b0  ExampleClass : MonoBehaviour \{\uc0\u8232 \u8232 	public float force = 25f;\u8232 	public float radius = 4f;\u8232 	public bool modifyForceByDistance = true;\u8232 	public Vector3 offset = default(Vector3);\u8232 	public ForceMode2D forceMode = ForceMode2D.Impulse;\u8232 \u8232 	private Collider2D[] colliders = new Collider2D[]\{\};\u8232 \u8232 	void Attraction () \{\u8232 		colliders = Physics2D.OverlapCircleAll (transform.position,radius);\u8232 		foreach (Collider2D hit in colliders) \{\u8232 			Rigidbody2D Rb = hit.GetComponent<Rigidbody2D> ();\u8232 			if (Rb)\u8232 				Rb.AddAttractionForce2D (force, transform.position + offset, radius, modifyForceByDistance, forceMode);\u8232 		\}\u8232 	\}\u8232 \u8232 	void FixedUpdate () \{\u8232 		Attraction ();\u8232 	\}	\u8232 \}\
+\
+\pard\pardeftab720\sa200\qc\partightenfactor0
+
+\f0\b\fs28 \cf0 Rigidbody2D.AddRandomizedExplosionForce2D\
+\pard\pardeftab720\sa200\partightenfactor0
+
+\f1\b0\fs22 \cf0 Public static void 
+\f0\b AddRandomizedExplosionForce2D
+\f1\b0  (float 
+\f0\b force
+\f1\b0 , vector3 
+\f0\b explosionPosition
+\f1\b0 , float 
+\f0\b  radius
+\f1\b0 , bool 
+\f0\b modifyForceByDistance = true
+\f1\b0 , bool 
+\f0\b randomizeDirection = true
+\f1\b0 , bool 
+\f0\b randomizeForce
+\f1\b0  = 
+\f0\b false
+\f1\b0 , 
+\f0\b ForceMode2D
+\f1\b0  = ForceMode2D.Force )\
+Public static void 
+\f0\b AddRandomizedExplosionForce2D
+\f1\b0  (float 
+\f0\b force
+\f1\b0 , vector3 
+\f0\b explosionPosition
+\f1\b0 , bool 
+\f0\b randomizeDirection = true
+\f1\b0 , bool 
+\f0\b randomizeForce
+\f1\b0  = 
+\f0\b false
+\f1\b0 , 
+\f0\b ForceMode2D
+\f1\b0  = ForceMode2D.Force )\
+\pard\pardeftab720\sa200\partightenfactor0
+
+\f0\b\fs28 \cf0 Parameters
+\f1\b0 \
+\pard\pardeftab720\li270\sa200\partightenfactor0
+
+\f0\b\fs22 \cf0 force  			
+\f1\b0 The force of the explosion.\
+
+\f0\b explosionPosition		
+\f1\b0 The center of the circle witch the attraction has it's effect.\
+\pard\pardeftab720\li270\sl276\slmult1\sa200\partightenfactor0
+
+\f0\b \cf0 radius  			
+\f1\b0 Radius of the circle within witch the attraction has it's effect.\
+
+\f0\b modifyForceByDistance  	
+\f1\b0 Force will be modified by distance.\
+
+\f0\b randomizeDirection 	
+\f1\b0 multiply force direction randomly with 1 or -1.\
+
+\f0\b randomizeForce
+\f1\b0  		Multiply force with random value between 0 and 1.\
+
+\f0\b ForceMode2D
+\f1\b0  
+\f0\b 	 
+\f1\b0  	The method used to apply the attraction force to it's target.\
+\pard\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+
+\f0\b\fs28 \cf0 Description\
+\pard\pardeftab720\li270\sa200\partightenfactor0
+
+\f1\b0\fs22 \cf0 Applied a random force to a Rigidbody2D that simulates explosion effects.\
+The explosion is modeled as a circle with a certain center position and radius in world space.\
+
+\f0\b randomizeDirection 
+\f1\b0 if set to 
+\f0\b true, 
+\f1\b0 the direction of the force will be multiplied with random sign (-1 or 1).\
+
+\f0\b randomizeForce
+\f1\b0  if set to 
+\f0\b true, 
+\f1\b0 Force will be multiplied with random value between 0 and 1.\
+
+\f0\b modifyForceByDistance 
+\f1\b0 if set to 
+\f0\b true, 
+\f1\b0 Force will be modified by distance, but Note that bodies with the center of mass outside the radius will not be affected by the explosion.\
+explosion force can be applied only to an active Rigidbody2D. If a GameObject is inactive, AddAttractionForce2D has no effect.
+\f2\fs18 \
+\pard\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+
+\f0\b\fs28 \cf0 Example\
+\pard\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+
+\fs22 \cf0 using
+\f1\b0  UnityEngine;\uc0\u8232 
+\f0\b using
+\f1\b0  ExplosionForce2D;\uc0\u8232 \u8232 public 
+\f0\b class
+\f1\b0  ExampleClass : MonoBehaviour \{\uc0\u8232 \u8232 	public float force = 25f;\u8232 	public float radius = 4f;\u8232 	public bool modifyForceByDistance = true;\u8232 	public Vector3 offset = default(Vector3);\u8232 	public ForceMode2D forceMode = ForceMode2D.Impulse;\u8232 \u8232 	private Collider2D[] colliders = new Collider2D[]\{\};\u8232 \u8232 	void Explosion () \{\u8232 		colliders = Physics2D.OverlapCircleAll (transform.position,radius);\u8232 		foreach (Collider2D hit in colliders) \{\u8232 			Rigidbody2D Rb = hit.GetComponent<Rigidbody2D> ();\u8232 			if (Rb)\u8232 				Rb.AddRandomizedExplosionForce2D (force, transform.position + offset, radius, modifyForceByDistance,true,true, forceMode);\u8232 		\}\u8232 	\}\u8232 \u8232 	void Start () \{\u8232 		Explosion ();\u8232 	\}	\u8232 \}\u8232 \
+\pard\pardeftab720\sl276\slmult1\sa200\qc\partightenfactor0
+
+\f0\b\fs36 \cf2 Send Explosion Damage\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0\fs22 \cf0 You can send custom explosion damage. This feature uses the Unity 
+\f0\b 'SendMessage()' 
+\f1\b0 method.\
+\pard\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+\cf0 See: {\field{\*\fldinst{HYPERLINK "https://docs.unity3d.com/ScriptReference/GameObject.SendMessage.html"}}{\fldrslt https://docs.unity3d.com/ScriptReference/GameObject.SendMessage.html}}\cf3 \
+
+\f0\b \cf0 Explosion Damage
+\f1\b0 : is the custom damage and has nothing to do with explosion force. You can specify this, for example, based on enemy type.\
+
+\f0\b Modify Damage By Distance
+\f1\b0 : if set to 
+\f0\b true
+\f1\b0 , '
+\f0\b Explosion Damage
+\f1\b0 ' will be modified based on the distance between rigidbodies and the explosion center.\
+
+\f0\b Method To Call
+\f1\b0 : is the name of the method to call on a targeted Gameobject that holds the Rigidbody2D component affected with explosion.\
+\pard\pardeftab720\sl276\slmult1\partightenfactor0
+
+\f0\b \cf0 Options
+\f1\b0  : '
+\f0\b Require Reciver'  or  'Dont Require Reciver' . 
+\f1\b0\fs20 S
+\fs22 hould an error be raised if the method doesn't exist on the target Gameobject?\
+\pard\pardeftab720\sa200\partightenfactor0
+
+\f2\fs20 \cf4 \uc0\u8232 
+\f0\b\fs28 \cf0 Example
+\f1\b0\fs22 \
+\pard\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+
+\f0\b\fs24 \cf0 using
+\f1\b0  UnityEngine;\uc0\u8232 \u8232 public 
+\f0\b class
+\f1\b0  Enemy : MonoBehaviour \{\uc0\u8232 \u8232 	public float health = 100f;\u8232 \u8232 	public void TakeExplosionDamage (float damage) \{\u8232 		health -= damage;\u8232 	\}\u8232 \}\
+\pard\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+
+\f0\b\fs28 \cf0 Description
+\f1\b0\fs24 \
+When an enemy, that has Rigidbody2D and this class attached, is affected by the explosion, the 
+\f0\b \'91TakeExplosionDamage\'92 
+\f1\b0 method will be called, and the 
+\f0\b \'91Explosion Damage\'92 
+\f1\b0 that we specified will be passed as 
+\f0\b \'91damage\'92 
+\f1\b0 parameter.
+\f0\b  
+\f1\b0 Let's say our enemy has 100 healths, and we setup the explosion like this:\
+\pard\pardeftab720\sa200\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+\cf0 So after the explosion occure the enemy will have 60 healths left.\uc0\u8232 
+\fs22 \uc0\u8232 \
+\pard\pardeftab720\sl276\slmult1\sa200\qc\partightenfactor0
+
+\f0\b\fs36 \cf2 Radius Color\
+\pard\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+
+\f1\b0\fs22 \cf0 You can change the color of the explosion radius by opening the script '
+\f0\b ExplosionForce2DPreferences
+\f1\b0 ' which is located in: Assets/ExplosionForce2D/Scripts/Main\uc0\u8232 \
+\pard\pardeftab720\sl276\slmult1\sa200\qc\partightenfactor0
+
+\f0\b\fs36 \cf2 Physics2D.OverlapCircleNonAlloc\
+\pard\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+
+\f1\b0\fs22 \cf0 By default, all explosions use 
+\f0\b Physics2D.OverlapCircleAll
+\f1\b0 , and if you want to use 
+\f0\b Physics2D.OverlapCircleNonAlloc
+\f1\b0 , there is a comment example in every explosion at the bottom of the script, under the 
+\f0\b #region OverlapCircleNonAlloc.
+\f1\b0 \
+
+\f0\b The
+\f1\b0  
+\f0\b disadvantage 
+\f1\b0 of using 
+\f0\b OverlapCircleNonAlloc 
+\f1\b0 is that the explosion is limited to a certain number of rigidbodies that can be affected. Basically, you must specify the max number of rigidbodies.\
+\pard\pardeftab720\sl276\slmult1\partightenfactor0
+
+\f0\b \cf0 The advantage 
+\f1\b0 of using 
+\f0\b OverlapCircleNonAlloc 
+\f1\b0 is that no memory is allocated for the result, so garbage collection performance is improved when the check is performed frequently.\
+\pard\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+\cf0 \uc0\u8232 See : {\field{\*\fldinst{HYPERLINK "https://docs.unity3d.com/ScriptReference/Physics2D.OverlapCircleNonAlloc.html"}}{\fldrslt https://docs.unity3d.com/ScriptReference/Physics2D.OverlapCircleNonAlloc.html}}\
+}
