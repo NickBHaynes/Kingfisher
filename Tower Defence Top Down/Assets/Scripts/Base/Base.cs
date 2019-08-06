@@ -9,12 +9,6 @@ public class Base : MonoBehaviour
     private float hitsLeft;
 
 
-    [Header("Health Bar bits")]
-    public Image healthBar;
-
-
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +25,7 @@ public class Base : MonoBehaviour
     public void TakeDamage(float hitsToTake)
     {
         hitsLeft -= hitsToTake;
-        healthBar.fillAmount = hitsLeft / hitPoints;
+        FindObjectOfType<GameSession>().baseHealthBar.fillAmount = hitsLeft / hitPoints;
 
 
         if (hitsLeft <= 0)
