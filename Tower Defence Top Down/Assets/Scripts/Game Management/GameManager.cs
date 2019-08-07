@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
     // Cached unlock data for saving
     private string playerTemplateFilePath = "playerTemplates";
     private string playerCoinTotalFilePath = "playerCoins";
+    private string baseTemplateFilePath = "baseTemplates";
 
 
 
@@ -90,6 +91,12 @@ public class GameManager : MonoBehaviour
         SavePlayerCoinTotal();
     }
 
+    public void SaveBaseTemplates()
+    {
+        ES3.Save<BaseTemplate[]>(baseTemplateFilePath, bases);
+        SavePlayerCoinTotal();
+    }
+
     public void SavePlayerCoinTotal()
     {
         ES3.Save<float>(playerCoinTotalFilePath, playerCoinTotal);
@@ -108,6 +115,11 @@ public class GameManager : MonoBehaviour
         {
             playerCoinTotal = ES3.Load<float>(playerCoinTotalFilePath);
             Debug.Log("Player Coins File Exists");
+        }
+        if (ES3.KeyExists(baseTemplateFilePath))
+        {
+            bases = ES3.Load<BaseTemplate[]>(baseTemplateFilePath);
+            Debug.Log("Base Template File Exists");
         }
     }
 

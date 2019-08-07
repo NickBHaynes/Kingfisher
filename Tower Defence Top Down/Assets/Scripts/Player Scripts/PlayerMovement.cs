@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private Player thePlayer;
     private Base theBase;
     private GameSession theGameSession;
-   
+
     // Power Up Cached Data
     public bool powerUpActive; // serialized for debugging
     public GameObject theShield;
@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     private float newSpeedChangePercentage, newHealthPointsToAdd, newTimeActive, newBaseHealthToAdd, newPlayerHealthToRemove, newBaseHealthToRemove;
     private string debuffName;
 
-    
+
     private float blackoutTimeActive;
 
 
@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
 
         Fire();
     }
-   
+
     // Update is called once per frame
     void Update()
     {
@@ -77,7 +77,8 @@ public class PlayerMovement : MonoBehaviour
         if (enemiesInRange >= 1)
         {
             enemyInRange = true;
-        } else
+        }
+        else
         {
             enemyInRange = false;
         }
@@ -92,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Fire()
     {
-            firingCo = StartCoroutine(FireContinuoslyCo());
+        firingCo = StartCoroutine(FireContinuoslyCo());
 
     }
 
@@ -120,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (firingSound != null)
             {
-                 FindObjectOfType<AudioManager>().PlaySound(firingSound);
+                FindObjectOfType<AudioManager>().PlaySound(firingSound);
             }
         }
     }
@@ -130,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
     public IEnumerator ActivatePowerUpCo()
     {
         Debug.Log(debuffName);
-        theGameSession.StartFlashingDebugLable(debuffName);    
+        theGameSession.StartFlashingDebugLable(debuffName);
 
         GameObject currentProjectile = projectile;
         if (newExplosiveProjectile != null)
@@ -153,7 +154,7 @@ public class PlayerMovement : MonoBehaviour
         theGameSession.StopFlashingDebugLable();
         theGameSession.debuffLabelShowing = true;
         powerUpActive = false;
-       
+
 
     }
 
@@ -177,7 +178,7 @@ public class PlayerMovement : MonoBehaviour
         blackoutTimeActive = timeActive;
         debuffName = "Blackout";
         StartCoroutine(ActivateBlackOutCo());
-        
+
     }
 
     public void ActivateShield(bool activate)
@@ -186,13 +187,14 @@ public class PlayerMovement : MonoBehaviour
         {
             theShield.SetActive(activate);
             theShield.GetComponent<Shield>().ResetHits();
-        } else
+        }
+        else
         {
             Debug.LogError("Shield Game Object Missing");
         }
     }
 
-    
+
 
     public void ActivatePowerUpDataInput(GameObject expolosiveProjectile, float speedChangePercentage,
     float healthPointsToAdd, float timeActive, string newDebuffName, float baseHealthToAdd, float playerHealthToRemove, float baseHealthToRemove)
