@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     // selecting a base
     public bool baseSelected;
     public GameObject selectedBasePrefab;
+    public bool baseIsUpgraded;
 
     [Header("Level points system")]
     public float[] pointsToNextLevel;
@@ -72,6 +73,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        baseIsUpgraded = false;
         LoadGameSave();
         pointsToNextLevel = new float[maxLevel];
         pointsToNextLevel[1] = baseExp;

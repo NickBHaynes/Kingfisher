@@ -147,12 +147,14 @@ public class GameSession : MonoBehaviour
         if (!GameManager.instance.playerSelected)
         {
             Instantiate(basicPlayer, playerSpawnPoint.position, Quaternion.identity);
+           
         }
 
         // instantiating the chosen player into the scene
         else
         {
             Instantiate(GameManager.instance.selectedPlayerPrefab, playerSpawnPoint.position, Quaternion.identity);
+            
         }
 
     }
@@ -165,6 +167,13 @@ public class GameSession : MonoBehaviour
         } else
         {
             Instantiate(GameManager.instance.selectedBasePrefab, baseSpawnPoint.position, Quaternion.identity);
+            if (GameManager.instance.baseIsUpgraded)
+            {
+                if (FindObjectOfType<Base>().turret != null)
+                {
+                    FindObjectOfType<Base>().turret.SetActive(true);
+                }
+            } 
         }
     }
 

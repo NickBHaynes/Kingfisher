@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5286151917041154378}
   - component: {fileID: 8165868638505619926}
   m_Layer: 12
-  m_Name: Basic Base
+  m_Name: Special 2
   m_TagString: Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 01217eeb4c3474689bf693dcf249001c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8c8ffc86e3ca845a5b4c0328eb422d5e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1859f721dd9734302845f00f5dc937a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 300
+  hitPoints: 800
 --- !u!58 &8165868638505619926
 CircleCollider2D:
   m_ObjectHideFlags: 0
