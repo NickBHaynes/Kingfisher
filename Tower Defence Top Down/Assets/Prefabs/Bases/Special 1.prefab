@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1859f721dd9734302845f00f5dc937a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 700
+  hitPoints: 600
   turret: {fileID: 7154450176115134237}
 --- !u!58 &8165868638505619926
 CircleCollider2D:
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94fcd9dbff6574528901f71cb3c38a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenShots: 5
+  timeBetweenShots: 8
   projectile: {fileID: 5202022156633469582, guid: 31629f4d749fe415ab7e7f9efaef7d3e,
     type: 3}
   projectileSpawnPoint: {fileID: 4488316821865695556}

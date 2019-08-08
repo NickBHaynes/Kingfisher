@@ -478,6 +478,7 @@ public class PlayerChoiceMenu : MonoBehaviour
             theGm.bases[currentBaseShownNum].isUnlocked = true;
             theGm.playerCoinTotal -= theGm.bases[currentBaseShownNum].unlockCost;
             UpdateBaseShown();
+            theGm.SaveBaseTemplates();
             // Add save function for bases here
             baseUnlockPanel.SetActive(false);
         }
@@ -507,6 +508,7 @@ public class PlayerChoiceMenu : MonoBehaviour
         theGm.bases[currentBaseShownNum].isUpgraded = true;
         theGm.playerCoinTotal -= theGm.bases[currentBaseShownNum].upgradeCost;
         UpdateBaseShown();
+        theGm.SaveBaseTemplates();
         unlockUpgradeBasePanel.SetActive(false);
     }
 
