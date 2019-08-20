@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7095208438302734987}
   - component: {fileID: 154924792628025201}
+  - component: {fileID: 1844180192851232067}
   - component: {fileID: 154924792628025202}
   - component: {fileID: 1431637549}
   - component: {fileID: 7101403248170676825}
@@ -64,6 +65,7 @@ MonoBehaviour:
   lookSpeed: 0
   movementJoystick: {fileID: 0}
   lookDirectionJoystick: {fileID: 0}
+  isShotgunSpecial: 0
   timeBetweenShots: 0.6
   projectile: {fileID: 5202022156633469582, guid: 1ce4309530c0440589af3c851b8b1f16,
     type: 3}
@@ -72,6 +74,24 @@ MonoBehaviour:
   firingSound: Laser_Medium
   powerUpActive: 0
   theShield: {fileID: 4928876030090131382}
+--- !u!114 &1844180192851232067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154924792628025203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 109670a86ad744eaa90cdc7b6428313d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenShots: 0.6
+  projectile: {fileID: 5202022156633469582, guid: 1ce4309530c0440589af3c851b8b1f16,
+    type: 3}
+  projectileSpawnPoint: {fileID: 4713142795250629386}
+  firingVFX: {fileID: 0}
+  firingSound: Laser_Medium
 --- !u!50 &154924792628025202
 Rigidbody2D:
   serializedVersion: 4
@@ -105,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424b39446d5aa4344a1d0a154b870f5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 500
+  hitPoints: 200
 --- !u!222 &7101403248170676825
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -558,7 +578,7 @@ GameObject:
   - component: {fileID: 4816770724533338522}
   - component: {fileID: 1610842065136550398}
   - component: {fileID: 3136157051310348802}
-  m_Layer: 8
+  m_Layer: 17
   m_Name: ShieldPowerUp
   m_TagString: Shield
   m_Icon: {fileID: 0}

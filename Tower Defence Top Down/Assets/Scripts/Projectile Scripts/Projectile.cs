@@ -11,17 +11,21 @@ public class Projectile : MonoBehaviour
     public float lifeTime;
     public GameObject destroyEffect;
 
+    public float shotgunSplitFactor;
+    private Vector2 shotGunVector2;
+
     // Start is called before the first frame update
     void Start()
     {
         // destroys the projectile after a certain time
         Invoke("DestroyProjectile", lifeTime);
+        shotGunVector2 = new Vector2(shotgunSplitFactor, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.up * projectileSpeed * Time.deltaTime);
+        transform.Translate((Vector2.up + shotGunVector2) * projectileSpeed * Time.deltaTime);
     }
 
 

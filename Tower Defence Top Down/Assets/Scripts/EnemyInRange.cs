@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class EnemyInRange : MonoBehaviour
 {
-    PlayerMovement theplayer;
+    PlayerFiring playerFiring;
     private void Start()
     {
-        theplayer = FindObjectOfType<PlayerMovement>();
+        playerFiring = FindObjectOfType<PlayerFiring>();
     }
 
     private void OnTriggerEnter2D(Collider2D otherCollider)
     {
         if (otherCollider.CompareTag("Enemy"))
         {
-            theplayer.EnemyFound();
+            playerFiring.EnemyFound();
         }
     }
 
@@ -22,7 +22,7 @@ public class EnemyInRange : MonoBehaviour
     {
         if (otherCollider.CompareTag("Enemy"))
         {
-            theplayer.EnemyLost();
+            playerFiring.EnemyLost();
         }
     }
 }

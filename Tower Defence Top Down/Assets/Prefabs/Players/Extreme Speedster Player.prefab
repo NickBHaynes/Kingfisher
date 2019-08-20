@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4430667349623952975}
   - component: {fileID: 2349191615543401818}
   m_Layer: 8
-  m_Name: Large Speedster Player
+  m_Name: Extreme Speedster Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424b39446d5aa4344a1d0a154b870f5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 350
+  hitPoints: 450
 --- !u!58 &4430667349623952975
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -152,7 +152,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c9facd12edd7c4ceea71c3ff63963fa0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f83e0bf55e7724fce82d8874099d9bf3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

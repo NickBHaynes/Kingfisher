@@ -23,8 +23,7 @@ public class GameManager : MonoBehaviour
 
     [Space]
 
-    // the users currency
-    public float playerCoinTotal;
+    
 
     // selecting a player
     public bool playerSelected;
@@ -47,7 +46,12 @@ public class GameManager : MonoBehaviour
     // Cached unlock data for saving
     private string playerTemplateFilePath = "playerTemplates";
     private string playerCoinTotalFilePath = "playerCoins";
+    private string playerAtomTotalFilePath = "playerAtoms";
     private string baseTemplateFilePath = "baseTemplates";
+
+    [Header("Player currency")]
+    public float playerAtomTotal;
+    public float playerCoinTotal;
 
 
 
@@ -102,6 +106,11 @@ public class GameManager : MonoBehaviour
         ES3.Save<float>(playerCoinTotalFilePath, playerCoinTotal);
     }
 
+    public void SavePlayerAtomTotal()
+    {
+        ES3.Save<float>(playerAtomTotalFilePath, playerAtomTotal);
+    }
+
     public void LoadGameSave()
     {
         if (ES3.KeyExists(playerTemplateFilePath))
@@ -120,6 +129,12 @@ public class GameManager : MonoBehaviour
         {
             bases = ES3.Load<BaseTemplate[]>(baseTemplateFilePath);
             Debug.Log("Base Template File Exists");
+        }
+
+        if (ES3.KeyExists(playerAtomTotalFilePath))
+        {
+            playerAtomTotal = ES3.Load<float>(playerAtomTotalFilePath);
+            Debug.Log("Player Atom File Exists");
         }
     }
 

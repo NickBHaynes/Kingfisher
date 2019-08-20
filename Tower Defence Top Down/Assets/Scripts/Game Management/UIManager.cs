@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     public GameObject selectPlayerPanel;
     public GameObject settingMenuPanel;
     public GameObject SelectBaseMenu;
+    public GameObject buyAtomsMenu;
 
     [Space]
 
@@ -26,6 +27,10 @@ public class UIManager : MonoBehaviour
     [Header("Base Menu Transforms")]
     public Transform baseMenuPanelTransform;
     public Transform origionalBaseMenuPosition;
+
+    [Header("Purchase Atoms Menu")]
+    public Transform purchaseAtomsPanelTransform;
+    public Transform origionalPurchaseAtomsPosition;
 
     [Space]
 
@@ -104,6 +109,20 @@ public class UIManager : MonoBehaviour
         if (SelectBaseMenu == null) return;
         theAMan.PlaySound(menusClickSound);
         baseMenuPanelTransform.DOMove(origionalBaseMenuPosition.position, 0.5f);
+    }
+
+    public void PurchaseAtomsMenuBtn()
+    {
+        if (buyAtomsMenu == null) return;
+        theAMan.PlaySound(menusClickSound);
+        buyAtomsMenu.SetActive(true);
+        purchaseAtomsPanelTransform.DOMove(mainMenuPos.transform.position, 0.5f);
+    }
+
+    public void ClosePurchaseAtomsMenu()
+    {
+        if (buyAtomsMenu == null) return;
+        purchaseAtomsPanelTransform.DOMove(origionalPurchaseAtomsPosition.position, 0.5f);
     }
 
 
