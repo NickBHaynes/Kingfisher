@@ -30,6 +30,8 @@ public class GameSession : MonoBehaviour
 
     [SerializeField] float coinsCollected;
     public float pointsEarntInLevel;
+    private float coinCounter;
+    private float pointsCounter;
 
     [Header ("Game Object References")]
 
@@ -37,6 +39,11 @@ public class GameSession : MonoBehaviour
     public Transform playerSpawnPoint;
     public GameObject basicBase;
     public Transform baseSpawnPoint;
+
+    [Header("Game Over Panel")]
+
+    public TMP_Text totalLevelScoreText;
+    public TMP_Text totalLevelCoinsText;
 
     [Space]
 
@@ -48,6 +55,7 @@ public class GameSession : MonoBehaviour
 
     [Header ("Player HealthBar")]
     public Image playerHealthBar;
+    public Image baseHealthBar;
 
     // Audio references
 
@@ -121,6 +129,8 @@ public class GameSession : MonoBehaviour
         }
 
        
+
+       
     }
 
     public void ShakeCamera(float magnitude, float roughness)
@@ -137,12 +147,14 @@ public class GameSession : MonoBehaviour
         if (!GameManager.instance.playerSelected)
         {
             Instantiate(basicPlayer, playerSpawnPoint.position, Quaternion.identity);
+           
         }
 
         // instantiating the chosen player into the scene
         else
         {
             Instantiate(GameManager.instance.selectedPlayerPrefab, playerSpawnPoint.position, Quaternion.identity);
+            
         }
 
     }
@@ -155,6 +167,13 @@ public class GameSession : MonoBehaviour
         } else
         {
             Instantiate(GameManager.instance.selectedBasePrefab, baseSpawnPoint.position, Quaternion.identity);
+            if (GameManager.instance.baseIsUpgraded)
+            {
+                if (FindObjectOfType<Base>().turret != null)
+                {
+                    FindObjectOfType<Base>().turret.SetActive(true);
+                }
+            } 
         }
     }
 
@@ -176,21 +195,26 @@ public class GameSession : MonoBehaviour
     {
         //stopping the time so that enemys and projectiles stop spawning and the player cannot be moved.
         
-            losePanel.SetActive(true);
-            theJoystick.SetActive(false);
-            // updating the Game Manager with the new collected coins
-            GameManager.instance.AddToPlayerCoinTotal(coinsCollected);
-            //Saving the players coins in the game manager save files
-            GameManager.instance.SavePlayerCoinTotal();
+        losePanel.SetActive(true);
+        theJoystick.SetActive(false);
+        totalLevelCoinsText.text = coinsCollected.ToString();
+        totalLevelScoreText.text = pointsEarntInLevel.ToString();
 
-            GameManager.instance.AddToPlayerPointsTotal(pointsEarntInLevel);
-            Time.timeScale = 0;
+        // updating the Game Manager with the new collected coins
+        GameManager.instance.AddToPlayerCoinTotal(coinsCollected);
+        //Saving the players coins in the game manager save files
+        GameManager.instance.SavePlayerCoinTotal();
+
+        GameManager.instance.AddToPlayerPointsTotal(pointsEarntInLevel);
+        Time.timeScale = 0;
             
 
 
 
         // SaveSystem.SavePlayerStats(GameManager.instance);
     }
+
+    
 
     public void PauseBtnPressed()
     {

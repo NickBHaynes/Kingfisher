@@ -24,6 +24,7 @@ public class EnemySpawner : MonoBehaviour
     private int totalSpawnedinCurrentWave;
     public TMP_Text waveCountLabel;
     public GameObject nextWavePanel;
+    public TMP_Text wavePanelText;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +44,7 @@ public class EnemySpawner : MonoBehaviour
         {
             Time.timeScale = 0;
             nextWavePanel.SetActive(true);
+            wavePanelText.text = "Wave " + waves[currentWave].waveNumber.ToString() + " Complete";
             currentWave++;
             amountSpawned = 0;
             totalSpawnedinCurrentWave = 0;

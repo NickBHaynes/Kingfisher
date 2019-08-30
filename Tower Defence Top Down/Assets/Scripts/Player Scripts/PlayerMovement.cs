@@ -11,18 +11,6 @@ public class PlayerMovement : MonoBehaviour
     public DynamicJoystick lookDirectionJoystick;
 
 
-    [Header("Player Shooting")]
-    public float timeBetweenShots = 0.5f;
-    private float shootingTimer;
-    public GameObject projectile;
-    public Transform projectileSpawnPoint;
-    public GameObject firingVFX;
-    Coroutine firingCo;
-    public string firingSound;
-
-    private int enemiesInRange;
-    private bool enemyInRange;
-
     // cached references
     private Rigidbody2D theRb;
     private Vector2 moveVelocity;
@@ -30,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private Player thePlayer;
     private Base theBase;
     private GameSession theGameSession;
-   
+
     // Power Up Cached Data
     public bool powerUpActive; // serialized for debugging
     public GameObject theShield;
@@ -40,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private float newSpeedChangePercentage, newHealthPointsToAdd, newTimeActive, newBaseHealthToAdd, newPlayerHealthToRemove, newBaseHealthToRemove;
     private string debuffName;
 
-    
+
     private float blackoutTimeActive;
 
 
@@ -55,9 +43,9 @@ public class PlayerMovement : MonoBehaviour
         movementJoystick = FindObjectOfType<VariableJoystick>();
         lookDirectionJoystick = FindObjectOfType<DynamicJoystick>();
 
-        Fire();
+     //   Fire();
     }
-   
+
     // Update is called once per frame
     void Update()
     {
@@ -74,13 +62,7 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(Vector3.forward, playerDirection);
         }
 
-        if (enemiesInRange >= 1)
-        {
-            enemyInRange = true;
-        } else
-        {
-            enemyInRange = false;
-        }
+        
 
     }
 
@@ -90,53 +72,14 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void Fire()
-    {
-            firingCo = StartCoroutine(FireContinuoslyCo());
-
-    }
-
-    private IEnumerator FireContinuoslyCo()
-    {
-        while (true)
-        {
-            FireRoutine();
-            yield return new WaitForSeconds(timeBetweenShots);
-        }
-    }
-
-    private void FireRoutine()
-    {
-        if (enemyInRange)
-        {
-            if (firingVFX != null)
-            {
-                var newVFX = Instantiate(firingVFX, projectileSpawnPoint.position, transform.rotation);
-                newVFX.transform.parent = transform;
-            }
-
-            var newProjectile = Instantiate(projectile, projectileSpawnPoint.position, transform.rotation);
-            newProjectile.transform.parent = theGameSession.projectileContainer.transform;
-
-            if (firingSound != null)
-            {
-                 FindObjectOfType<AudioManager>().PlaySound(firingSound);
-            }
-        }
-    }
+   
 
 
     // called from the individual power up script
     public IEnumerator ActivatePowerUpCo()
     {
         Debug.Log(debuffName);
-        theGameSession.StartFlashingDebugLable(debuffName);    
-
-        GameObject currentProjectile = projectile;
-        if (newExplosiveProjectile != null)
-        {
-            projectile = newExplosiveProjectile;
-        }
+        theGameSession.StartFlashingDebugLable(debuffName);
 
         speed *= newSpeedChangePercentage;
         thePlayer.hitPoints += newHealthPointsToAdd;
@@ -149,11 +92,10 @@ public class PlayerMovement : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(newTimeActive);
         speed /= newSpeedChangePercentage;
-        projectile = currentProjectile;
         theGameSession.StopFlashingDebugLable();
         theGameSession.debuffLabelShowing = true;
         powerUpActive = false;
-       
+
 
     }
 
@@ -177,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
         blackoutTimeActive = timeActive;
         debuffName = "Blackout";
         StartCoroutine(ActivateBlackOutCo());
-        
+
     }
 
     public void ActivateShield(bool activate)
@@ -186,13 +128,12 @@ public class PlayerMovement : MonoBehaviour
         {
             theShield.SetActive(activate);
             theShield.GetComponent<Shield>().ResetHits();
-        } else
+        }
+        else
         {
             Debug.LogError("Shield Game Object Missing");
         }
     }
-
-    
 
     public void ActivatePowerUpDataInput(GameObject expolosiveProjectile, float speedChangePercentage,
     float healthPointsToAdd, float timeActive, string newDebuffName, float baseHealthToAdd, float playerHealthToRemove, float baseHealthToRemove)
@@ -207,16 +148,6 @@ public class PlayerMovement : MonoBehaviour
         newPlayerHealthToRemove = playerHealthToRemove;
 
         StartCoroutine(ActivatePowerUpCo());
-    }
-
-    public void EnemyFound()
-    {
-        enemiesInRange += 1;
-    }
-
-    public void EnemyLost()
-    {
-        enemiesInRange -= 1;
     }
 }
 

@@ -10,6 +10,7 @@ TagManager:
   - ProjectileWall
   - ColliderBox
   - Shield
+  - Base Projectile
   layers:
   - Default
   - TransparentFX
@@ -27,8 +28,8 @@ TagManager:
   - Borders
   - Pick Ups
   - Sprite Mask BG
-  - 
-  - 
+  - Base Projectile
+  - Shield
   - 
   - 
   - 

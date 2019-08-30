@@ -15,9 +15,14 @@ public class BaseTemplate
     //whether the base needs to be purchased or not
     public bool isUnlocked;
     public bool isSelected;
+
     //option if the base can be upgraded eg have a turret
     public bool upgradable;
+
     public string upgradeName;
+    public float upgradeCost;
+    public Sprite upgradeImage;
+
     public bool isUpgraded;
 
 }

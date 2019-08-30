@@ -43,7 +43,8 @@ public class PlayerChoiceMenu : MonoBehaviour
     public TMP_Text currentPlayerProjectile;
     public TMP_Text unlock_SelectBtn;
     public TMP_Text unlockCost;
-    public TMP_Text currentCoinsOwned;
+    public TMP_Text currentCoinsOwned_PlayerMenu;
+    public TMP_Text currentAtomsOwned_PlayerMenu;
 
     [Header("New unlock selected player panel")]
     public GameObject newUnlockPanel;
@@ -58,7 +59,27 @@ public class PlayerChoiceMenu : MonoBehaviour
     public TMP_Text baseLevel;
     public TMP_Text unlock_SelectBaseBtn;
     public TMP_Text baseUnlockCost;
-    public TMP_Text currentCoinsOwned_Base;
+    public TMP_Text currentCoinsOwned_BaseMenu;
+    public TMP_Text currentAtomsOwned_BaseMenu;
+
+    [Header("Base Upgrade Panel References")]
+    public GameObject baseUpgradePanel;
+    public Image upgradeImage;
+    public TMP_Text upgradeCost;
+    public GameObject UnlockUpgradeBaseGroup;
+    public GameObject UpgradeUnlockedMessage;
+
+    [Space]
+
+    public GameObject unlockUpgradeBasePanel;
+    public GameObject confirmBaseUpgradeBtn;
+    public TMP_Text upgradeBaseMessage;
+
+    [Header("Main Menu Currency Panel")]
+
+    public TMP_Text currentCoinsOwned_MainMenu;
+    public TMP_Text currentAtomsOwned_MainMenu;
+
 
     [Header("Base unlock selected panel")]
     public GameObject baseCostGrouping;
@@ -95,6 +116,7 @@ public class PlayerChoiceMenu : MonoBehaviour
         UpdateSelectedPlayerShow();
         UpdateSelectedBaseShown();
         UpdateBaseShown();
+        UpdateMenuCurrencies();
     }
 
     // Update is called once per frame
@@ -119,8 +141,11 @@ public class PlayerChoiceMenu : MonoBehaviour
         }
     }
 
-
-   
+    public void UpdateMenuCurrencies()
+    {
+        currentCoinsOwned_MainMenu.text = theGm.playerCoinTotal.ToString();
+        currentAtomsOwned_MainMenu.text = theGm.playerAtomTotal.ToString();
+    }
 
     public void StartGameBtnPressed()
     {
@@ -183,7 +208,8 @@ public class PlayerChoiceMenu : MonoBehaviour
         currentPlayerType.text = theGm.players[currentPlayerShownNum].playerType;
         currentPlayerSpeedType.text = theGm.players[currentPlayerShownNum].speed;
         currentPlayerProjectile.text = theGm.players[currentPlayerShownNum].projectile;
-        currentCoinsOwned.text = theGm.playerCoinTotal.ToString();
+        currentCoinsOwned_PlayerMenu.text = theGm.playerCoinTotal.ToString();
+        currentAtomsOwned_PlayerMenu.text = theGm.playerAtomTotal.ToString();
         unlockCost.text = theGm.players[currentPlayerShownNum].unlockCost.ToString();
 
         if (theGm.players[currentPlayerShownNum].isUnlocked)
@@ -238,6 +264,7 @@ public class PlayerChoiceMenu : MonoBehaviour
                 theGm.players[i].isSelected = true;
                 theGm.playerSelected = true;
                 theGm.selectedPlayerPrefab = theGm.players[i].playerPrefab;
+               
 
                 theGm.selectedPlayerNum = currentPlayerShownNum;
                 UpdateMenu();
@@ -290,6 +317,7 @@ public class PlayerChoiceMenu : MonoBehaviour
             theGm.players[currentPlayerShownNum].isUnlocked = true;
             theGm.playerCoinTotal -= theGm.players[currentPlayerShownNum].unlockCost;
             UpdatePlayerShown();
+            UpdateMenuCurrencies();
             theGm.SavePlayerTemplates();
             newUnlockPanel.SetActive(false);    
         }
@@ -320,7 +348,28 @@ public class PlayerChoiceMenu : MonoBehaviour
         baseImage.sprite = theGm.bases[currentBaseShownNum].baseImage;
         baseLevel.text = theGm.bases[currentBaseShownNum].baseLevel.ToString();
         baseUnlockCost.text = theGm.bases[currentBaseShownNum].unlockCost.ToString();
-        currentCoinsOwned_Base.text = theGm.playerCoinTotal.ToString();
+        currentCoinsOwned_BaseMenu.text = theGm.playerCoinTotal.ToString();
+        currentAtomsOwned_BaseMenu.text = theGm.playerAtomTotal.ToString();
+
+        if (theGm.bases[currentBaseShownNum].upgradable
+            && theGm.bases[currentBaseShownNum].isUnlocked)
+        {
+            baseUpgradePanel.SetActive(true);
+            baseImage.sprite = theGm.bases[currentBaseShownNum].baseImage;
+            upgradeCost.text = theGm.bases[currentBaseShownNum].upgradeCost.ToString();
+            if (theGm.bases[currentBaseShownNum].isUpgraded)
+            {
+                UnlockUpgradeBaseGroup.SetActive(false);
+                UpgradeUnlockedMessage.SetActive(true);
+            } else
+            {
+                UnlockUpgradeBaseGroup.SetActive(true);
+                UpgradeUnlockedMessage.SetActive(false);
+            }
+        } else
+        {
+            baseUpgradePanel.SetActive(false);
+        }
 
         if (theGm.bases[currentBaseShownNum].isUnlocked)
         {
@@ -348,7 +397,7 @@ public class PlayerChoiceMenu : MonoBehaviour
 
     public void NextBaseBtn()
     {
-        if (!baseUnlockPanel.activeInHierarchy)
+        if (!baseUnlockPanel.activeInHierarchy && !unlockUpgradeBasePanel.activeInHierarchy)
         {
             if (currentBaseShownNum < theGm.bases.Length - 1)
             {
@@ -362,7 +411,7 @@ public class PlayerChoiceMenu : MonoBehaviour
 
     public void LastBaseBtn()
     {
-        if (!baseUnlockPanel.activeInHierarchy)
+        if (!baseUnlockPanel.activeInHierarchy && !unlockUpgradeBasePanel.activeInHierarchy)
         {
             if (currentBaseShownNum > 0)
             {
@@ -393,6 +442,13 @@ public class PlayerChoiceMenu : MonoBehaviour
                 // displaying the chosen base on the choose player screen
 
                 UpdateSelectedBaseShown();
+                if (theGm.bases[i].isUpgraded)
+                {
+                    theGm.baseIsUpgraded = true;
+                } else
+                {
+                    theGm.baseIsUpgraded = false;
+                }
 
                 // closing the menu
                 theUIMan.CloseBaseMenu();
@@ -436,9 +492,41 @@ public class PlayerChoiceMenu : MonoBehaviour
             theGm.bases[currentBaseShownNum].isUnlocked = true;
             theGm.playerCoinTotal -= theGm.bases[currentBaseShownNum].unlockCost;
             UpdateBaseShown();
+            theGm.SaveBaseTemplates();
+            UpdateMenuCurrencies();
             // Add save function for bases here
             baseUnlockPanel.SetActive(false);
         }
     }
+
+    public void UpgradeBaseBtnPressed()
+    {
+        unlockUpgradeBasePanel.SetActive(true);
+        if (theGm.playerCoinTotal >= theGm.bases[currentBaseShownNum].upgradeCost)
+        {
+            upgradeBaseMessage.text = "Are you sure?";
+            confirmBaseUpgradeBtn.SetActive(true);
+        } else
+        {
+            upgradeBaseMessage.text = "Sorry you do not have the coins";
+            confirmBaseUpgradeBtn.SetActive(false);
+        }
+    }
+
+    public void CancelUpgradeBtnPressed()
+    {
+        unlockUpgradeBasePanel.SetActive(false);
+    }
+
+    public void ConfirmUpgradeBaseBtn()
+    {
+        theGm.bases[currentBaseShownNum].isUpgraded = true;
+        theGm.playerCoinTotal -= theGm.bases[currentBaseShownNum].upgradeCost;
+        UpdateBaseShown();
+        theGm.SaveBaseTemplates();
+        unlockUpgradeBasePanel.SetActive(false);
+    }
+
+
 }
 
